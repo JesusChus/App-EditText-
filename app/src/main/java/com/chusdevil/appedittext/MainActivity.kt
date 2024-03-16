@@ -4,6 +4,7 @@ import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.EditText
+import android.widget.Toast
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
@@ -25,7 +26,13 @@ class MainActivity : AppCompatActivity() {
             val texto = texto.text.toString()
             val intent = Intent(this,SegundaActivity::class.java)
             intent.putExtra("texto", texto)
-            startActivity(intent)
+            if (texto=="lol"){
+
+                startActivity(intent)
+            }else{
+                Toast.makeText(this, "Inténtalo de nuevo", Toast.LENGTH_SHORT).show()
+            }
+
         }
     }
 
